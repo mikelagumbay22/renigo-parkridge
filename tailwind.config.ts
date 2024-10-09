@@ -53,6 +53,9 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -71,6 +74,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to top, #0052CC 0%, #034DBC 18%, #0648AC 32%, #0E3A7C 66%, #172B4D 100%)',
       },
     },
   },
