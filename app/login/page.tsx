@@ -1,4 +1,4 @@
-"use client"; // Ensure this is at the top of your file
+"use client"; 
 
 import Link from "next/link";
 import { useState } from "react";
@@ -7,15 +7,14 @@ import { useRouter } from "next/navigation";
 import { IconArrowLeft } from "@tabler/icons-react";
 
 export default function Index() {
-  // Specify types for email, password, and error state
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string | null>(null); // Explicitly allowing string or null
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(null); // Reset error state on form submission
+    setError(null);
 
     const { error } = await supabase.auth.signInWithPassword({
       email,
@@ -25,7 +24,7 @@ export default function Index() {
     if (error) {
       setError(error.message); // Set error message if login fails
     } else {
-      router.push('/dashboard'); // Navigate to the dashboard on successful login
+      router.push("/dashboard"); // Navigate to the dashboard on successful login
     }
   };
 
@@ -112,7 +111,7 @@ export default function Index() {
         {/* Sign Up Link */}
         <p className="mt-6 text-center text-sm text-white">
           Don’t have an account?{" "}
-          <Link href="/signup" className="text-sky-500 hover:text-blue-700">
+          <Link href="/register" className="text-sky-500 hover:text-blue-700">
             Sign up
           </Link>
         </p>
