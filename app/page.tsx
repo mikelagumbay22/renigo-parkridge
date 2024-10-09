@@ -4,29 +4,32 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 export default async function Index() {
   return (
     <>
-      <main className="grid h-svh grid-rows-[67.8%_7.7%_19%]">
-        <div className="ml-20 mt-20 bg-gradient-to-b from-[#172B4D] to-[#0052CC] text-white grid place-content-end rounded-l-[40px] rounded-tr-[40px] p-5 pb-[40px] justify-start">
-          <div>
-            <img src="https://placehold.co/100x100" alt="" />
-            <h1 className="font-bold text-3xl">Parkridge Estate</h1>
-            <p>Effortless Property Management,</p>
-            <p>Simplified for You.</p>
+      <main className="grid h-full grid-rows-[70%_min-content_auto]">
+        <div className="ml-20 bg-gradient-to-b from-[#172B4D] to-[#0052CC] text-white grid place-content-end rounded-l-[40px] rounded-tr-[40px] p-5 pb-[40px] justify-start">
+          <div className="grid gap-5">
+            <img
+              src="https://placehold.co/100x100"
+              alt=""
+              className="rounded-full"
+            />
+            <h1 className="font-bold text-5xl">Parkridge Estate</h1>
+            <div>
+              <p className="text-xl">Effortless Property Management,</p>
+              <p className="text-xl">Simplified for You.</p>
+            </div>
           </div>
         </div>
-        <div className="ml-20 relative">
+        <div className="ml-20 bg-[#0052CC]">
           <button
             type="button"
-            className="text-2xl bg-white font-bold p-5 pr-16 rounded-r-[50px] relative z-20"
+            className="text-2xl bg-white font-bold p-5 pr-16 rounded-r-full"
           >
             Get Started →
           </button>
-          <div className="bg-[#0052CC] h-full w-full absolute r-[50%] z-10 top-0"></div>
         </div>
         <div>
-          <div className="h-full ml-40 bg-gradient-to-t from-[#172B4D] to-[#0052CC] text-white grid place-content-end rounded-l-[40px]"></div>
-          <div>
-            {" "}
-            <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-1">
+          <div className="h-full ml-40 bg-gradient-to-t from-[#172B4D] to-[#0052CC] text-white grid place-content-end rounded-l-[40px]">
+            <div className="w-full flex items-center justify-center mx-auto text-center text-xs gap-8 py-1">
               <p>
                 Powered by{" "}
                 <a
@@ -39,7 +42,7 @@ export default async function Index() {
                 </a>
               </p>
               <ThemeSwitcher />
-            </footer>
+            </div>
           </div>
         </div>
       </main>

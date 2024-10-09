@@ -1,4 +1,7 @@
+import DeployButton from "@/components/deploy-button";
+
 import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 
 import "./globals.css";
@@ -20,12 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="bg-background text-foreground">
-      <div>
-                {children}
-              </div>
-
-
+     <body
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+      >
+        <div className="h-svh">
+          {children}
+        </div>
       </body>
     </html>
   );
