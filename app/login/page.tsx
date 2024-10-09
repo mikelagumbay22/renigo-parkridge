@@ -20,7 +20,7 @@ export default function Index() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium text-white pt-3"
             >
               Email
             </label>
@@ -36,7 +36,7 @@ export default function Index() {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium text-white pt-3"
             >
               Password
             </label>
@@ -49,7 +49,7 @@ export default function Index() {
           </div>
 
           {/* Forgot Password */}
-          <div className="text-right mb-6">
+          <div className="text-right mb-6 pb-6">
             <Link
               href="/forgot-password"
               className="text-sm text-white hover:text-blue-700"
