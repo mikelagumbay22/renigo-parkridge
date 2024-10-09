@@ -61,7 +61,7 @@ export default function Index() {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full p-2 border-0 border-b-2 bg-transparent text-blue-900 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border-0 border-b-2 bg-transparent text-white focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter your email"
               required // Mark as required
             />
@@ -81,7 +81,7 @@ export default function Index() {
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full p-2 border-0 bg-transparent text-blue-900 border-b-2 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border-0 bg-transparent text-white border-b-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter your password"
               required // Mark as required
             />
