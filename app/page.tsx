@@ -20,12 +20,14 @@ export default async function Index() {
           </div>
         </div>
         <div className="ml-20 bg-[#0052CC]">
-          <button
-            type="button"
-            className="text-2xl bg-white font-bold p-5 pr-16 rounded-r-full"
-          >
-            Get Started →
-          </button>
+          <Link href="/login">
+            <button
+              type="button"
+              className="text-2xl bg-white font-bold p-5 pr-16 rounded-r-full"
+            >
+              Get Started →
+            </button>{" "}
+          </Link>
         </div>
         <div>
           <div className="h-full ml-40 bg-gradient-to-t from-[#172B4D] to-[#0052CC] text-white grid place-content-end rounded-l-[40px]">
