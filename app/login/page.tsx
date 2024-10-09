@@ -1,26 +1,57 @@
+"use client"; // Ensure this is at the top of your file
+
 import Link from "next/link";
-// Assuming you're using Tabler Icons
+import { useState } from "react";
+import { supabase } from "../../lib/supabaseClient";
+import { useRouter } from "next/navigation";
+import { IconArrowLeft } from "@tabler/icons-react";
 
 export default function Index() {
+  // Specify types for email, password, and error state
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string | null>(null); // Explicitly allowing string or null
+  const router = useRouter();
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null); // Reset error state on form submission
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      setError(error.message); // Set error message if login fails
+    } else {
+      router.push('/dashboard'); // Navigate to the dashboard on successful login
+    }
+  };
+
   return (
-    <>
-      <main className="flex items-center justify-center h-screen bg-gradient-to-b from-[#172B4D] to-[#0052CC] ">
-        <div className=" p-8 rounded-lg  w-full max-w-md py-1.5">
-          {/* Back Icon */}
-          <Link href="/" className="flex items-center mb-4 text-white pb-10">
-            <span>Back</span>
-          </Link>
+    <main className="flex items-center justify-center h-screen bg-gradient-to-b from-[#172B4D] to-[#0052CC]">
+      <div className="p-8 rounded-lg w-full max-w-md py-1.5">
+        {/* Back Icon */}
+        <Link
+          href="/"
+          className="flex items-center mb-4 text-white hover:text-blue-700"
+        >
+          <IconArrowLeft className="mr-2" />
+          <span>Back</span>
+        </Link>
 
-          {/* Heading */}
-          <h1 className="text-4xl font-bold mb-6 text-left text-white py-10">
-            Log into your account
-          </h1>
+        {/* Heading */}
+        <h1 className="text-4xl font-bold mb-6 text-left text-white py-10">
+          Log into your account
+        </h1>
 
+        <form onSubmit={handleLogin}>
           {/* Email Input */}
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-white pt-3"
+              className="block text-sm font-medium text-blue-900 pt-3"
             >
               Email
             </label>
@@ -28,7 +59,11 @@ export default function Index() {
               type="email"
               id="email"
               name="email"
-              className="mt-1 block w-full p-2 border-0 border-white border-b-2 bg-transparent "
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-1 block w-full p-2 border-0 border-b-2 bg-transparent text-blue-900 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter your email"
+              required // Mark as required
             />
           </div>
 
@@ -36,7 +71,7 @@ export default function Index() {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-white pt-3"
+              className="block text-sm font-medium text-blue-900 pt-3"
             >
               Password
             </label>
@@ -44,9 +79,16 @@ export default function Index() {
               type="password"
               id="password"
               name="password"
-              className="mt-1 block w-full p-2 border-0 bg-inherit  border-white border-b-2 "
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="mt-1 block w-full p-2 border-0 bg-transparent text-blue-900 border-b-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter your password"
+              required // Mark as required
             />
           </div>
+
+          {/* Display Error if Login Fails */}
+          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
           {/* Forgot Password */}
           <div className="text-right mb-6 pb-6">
@@ -61,20 +103,20 @@ export default function Index() {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-sky-950 text-white py-2 rounded-full h-[47px] hover:bg-blue-600 transition-colors"
+            className="w-full bg-blue-600 text-white py-2 rounded-full h-[47px] hover:bg-blue-700 transition-colors"
           >
             Log In
           </button>
+        </form>
 
-          {/* Sign Up Link */}
-          <p className="mt-6 text-center text-sm text-slate-300">
-            Don’t have an account?{" "}
-            <Link href="/signup" className="text-blue-500 hover:text-blue-700">
-              Sign up
-            </Link>
-          </p>
-        </div>
-      </main>
-    </>
+        {/* Sign Up Link */}
+        <p className="mt-6 text-center text-sm text-white">
+          Don’t have an account?{" "}
+          <Link href="/signup" className="text-sky-500 hover:text-blue-700">
+            Sign up
+          </Link>
+        </p>
+      </div>
+    </main>
   );
 }
