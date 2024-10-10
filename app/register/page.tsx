@@ -25,10 +25,10 @@ const Register = () => {
   };
 
   return (
-    <main className="flex items-center justify-center h-screen bg-gradient-to-b from-[#172B4D] to-[#0052CC] ">
-      <div className="basis-full mb-6 px-9">
+    <main className="flex items-center justify-center h-screen bg-gradient-to-b from-[#172B4D] to-[#0052CC]">
+ <div className="p-8 rounded-lg w-full max-w-md py-1.5">
         <Link
-          href="/"
+          href="/login"
           className="flex items-center mb-4 text-white hover:text-blue-700"
         >
           <IconArrowLeft className="mr-2 text-white" />
@@ -46,6 +46,13 @@ const Register = () => {
             </p>
           )}
           <form onSubmit={handleRegister} className="space-y-6">
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-white pt-3"
+            >
+              Email
+            </label>
             <input
               type="email"
               placeholder="Email"
@@ -54,23 +61,33 @@ const Register = () => {
               className="mt-1 block w-full p-2 border-0 border-b-2 bg-transparent text-white"
               required
             />
+            </div>
+                      {/* Password Input */}
+          <div className="mb-4">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-white pt-3"
+            >
+              Password
+            </label>
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full p-2 border-0 bg-transparent text-white border-b-2 focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full p-2 border-0 bg-transparent text-white border-b-2 focus:ring-blue-500 focus:border-blue-500 mb-11"
               required
             />
+            </div>
             <button
               type="submit"
-              className="w-full py-2 bg-green-600 text-white rounded-md shadow hover:bg-green-700"
+              className="w-full py-2 bg-green-600 text-white shadow hover:bg-green-700 rounded-full"
             >
               Register
             </button>
           </form>
         </div>
-      </div>
+        </div>
     </main>
   );
 };

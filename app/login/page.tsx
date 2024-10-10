@@ -50,7 +50,7 @@ export default function Index() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-blue-900 pt-3"
+              className="block text-sm font-medium text-white pt-3"
             >
               Email
             </label>
@@ -70,7 +70,7 @@ export default function Index() {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-blue-900 pt-3"
+              className="block text-sm font-medium text-white pt-3"
             >
               Password
             </label>
