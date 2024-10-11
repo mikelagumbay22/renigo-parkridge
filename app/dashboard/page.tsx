@@ -1,7 +1,7 @@
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import UserNavigation from "../../components/user-navigation";
-import Carousel from "../../components/announcement/Dashboard-Carousel";
+import Carousel from "../../components/announcement/carousel";
 import Facilities from "../../components/facilities/facilities";
 
 export default function Index() {
