@@ -7,8 +7,15 @@ interface CarouselItemProps {
   dateTime: string;
 }
 
-const CarouselItem: React.FC<CarouselItemProps> = ({ title, imageSrc, dateTime }) => (
+const CarouselItem: React.FC<CarouselItemProps> = ({
+  title,
+  imageSrc,
+  dateTime,
+}) => (
   <div className="snap-center w-[213px] flex-shrink-0 flex flex-col items-center justify-center">
+    <div className="mt-4 text-center">
+      <h3 className="text-lg font-semibold">{title}</h3>
+    </div>
     <Image
       src={imageSrc}
       alt={title}
@@ -18,7 +25,6 @@ const CarouselItem: React.FC<CarouselItemProps> = ({ title, imageSrc, dateTime }
       style={{ objectFit: "cover", width: "213px", height: "325px" }}
     />
     <div className="mt-4 text-center">
-      <h3 className="text-lg font-semibold">{title}</h3>
       <p className="text-sm text-gray-500">{dateTime}</p>
     </div>
   </div>
@@ -28,12 +34,14 @@ export default function Carousel() {
   const items = [
     {
       title: "Gate Close - Renovation",
-      imageSrc: "https://toprealty.com.ph/wp-content/uploads/2022/06/parkridge.jpg",
+      imageSrc:
+        "https://toprealty.com.ph/wp-content/uploads/2022/06/parkridge.jpg",
       dateTime: "2024-10-01 10:30 AM",
     },
     {
       title: "Vehicle Accident - Sumulong",
-      imageSrc: "https://d78e7d51k2tkt.cloudfront.net/bc52d64e649b4e23ab1b0ef43fbce637.webp",
+      imageSrc:
+        "https://d78e7d51k2tkt.cloudfront.net/bc52d64e649b4e23ab1b0ef43fbce637.webp",
       dateTime: "2024-10-01 11:45 AM",
     },
     {
@@ -43,17 +51,20 @@ export default function Carousel() {
     },
     {
       title: "Simbang Gabi Schedule",
-      imageSrc: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVtVY_kv8i_APLNsyJfBy9OaDiniygaq1AF3iC15Kollg9sV9K3X574EGMgPR3Edtirwz9N3el04S2y4o-Vfixaswq7A39b4Ob-CPwMJB6sqgLbwUAJOPzVw-XgIkX-0JwD7S7p_SBJm-JcFnQzbLiGC5FQVVdhsBNulV65LcP7Gzzz-WVM-NOmB5XQA/s2048/San%20Pedro%20Calungsod%20Parish%20-%20Sta.%20Cruz,%20Antipolo%20City,%20Rizal.jpg",
+      imageSrc:
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVtVY_kv8i_APLNsyJfBy9OaDiniygaq1AF3iC15Kollg9sV9K3X574EGMgPR3Edtirwz9N3el04S2y4o-Vfixaswq7A39b4Ob-CPwMJB6sqgLbwUAJOPzVw-XgIkX-0JwD7S7p_SBJm-JcFnQzbLiGC5FQVVdhsBNulV65LcP7Gzzz-WVM-NOmB5XQA/s2048/San%20Pedro%20Calungsod%20Parish%20-%20Sta.%20Cruz,%20Antipolo%20City,%20Rizal.jpg",
       dateTime: "2024-10-02 09:15 AM",
     },
     {
       title: "3x3 Basket Ball Tournament",
-      imageSrc: "https://marketplace.canva.com/EAFqmAGGZbE/1/0/283w/canva-orange-and-white-bold-basketball-tournament-document-a4-vkPJPFdeHY4.jpg",
+      imageSrc:
+        "https://marketplace.canva.com/EAFqmAGGZbE/1/0/283w/canva-orange-and-white-bold-basketball-tournament-document-a4-vkPJPFdeHY4.jpg",
       dateTime: "2024-10-02 10:45 AM",
     },
     {
       title: "ParkRidge Gym Opening",
-      imageSrc: "https://marketplace.canva.com/EAE6jwsJsL8/1/0/1131w/canva-black-minimalist-gym-center-promo-poster-btQabfai1Wo.jpg",
+      imageSrc:
+        "https://marketplace.canva.com/EAE6jwsJsL8/1/0/1131w/canva-black-minimalist-gym-center-promo-poster-btQabfai1Wo.jpg",
       dateTime: "2024-10-03 01:00 PM",
     },
   ];

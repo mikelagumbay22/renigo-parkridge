@@ -38,6 +38,9 @@ export default function Index() {
         <div>
           <Carousel />
         </div>
+        <div>
+          <h1 className="font-extrabold text-3xl pt-2.5 text-left">Facilities</h1>
+        </div>
       </div>
       <div className="w-96">
       <UserNavigation /> 
