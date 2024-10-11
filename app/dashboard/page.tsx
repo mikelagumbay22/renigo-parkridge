@@ -2,13 +2,16 @@ import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import UserNavigation from "../../components/user-navigation";
 import Carousel from "../../components/announcement/Dashboard-Carousel";
+import Facilities from "../../components/facilities/Dashboard-Scroll";
 
 export default function Index() {
   return (
-    <main className="flex flex-col items-center justify-between h-screen"> 
+    <main className="flex flex-col items-center justify-between h-screen">
       <div className="p-8 rounded-lg w-full max-w-md py-1.5">
         <div>
-          <h1 className="text-center mt-14 text-xl">Welcome to ParkRidge Estate</h1>
+          <h1 className="text-center mt-14 text-xl">
+            Welcome to ParkRidge Estate
+          </h1>
         </div>
         <div>
           <div className="flex items-center justify-top py-4">
@@ -31,13 +34,12 @@ export default function Index() {
           <Carousel />
         </div>
         <div>
-          <h1 className="font-extrabold text-3xl pt-2.5 text-left">Facilities</h1>
+          <Facilities />
         </div>
       </div>
       <div className="w-96">
-      <UserNavigation /> 
+        <UserNavigation />
       </div>
-      
     </main>
   );
 }
