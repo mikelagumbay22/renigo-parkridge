@@ -1,13 +1,14 @@
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import UserNavigation from "../../components/user-navigation";
+import Carousel from "../../components/Announcement/Dashboard-Carousel";
 
 export default function Index() {
   return (
     <main className="flex flex-col items-center justify-between h-screen"> 
       <div className="p-8 rounded-lg w-full max-w-md py-1.5">
         <div>
-          <h1 className="text-center mt-11">Welcome to ParkRidge Estate</h1>
+          <h1 className="text-center mt-14 text-xl">Welcome to ParkRidge Estate</h1>
         </div>
         <div>
           <div className="flex items-center justify-top py-4">
@@ -27,12 +28,15 @@ export default function Index() {
           </div>
         </div>
         <div>
-          <h1 className="font-extrabold text-2xl pt-2.5 text-left">Announcements</h1>
+          <h1 className="font-extrabold text-3xl pt-2.5 text-left">Announcements</h1>
         </div>
         <div>
           <Link href="/forgot-password">
             <h1 className="font-bold text-right">View all</h1>
           </Link>
+        </div>
+        <div>
+          <Carousel />
         </div>
       </div>
       <div className="w-96">
