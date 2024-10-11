@@ -71,29 +71,30 @@ export default function Carousel() {
   ];
 
   return (
-    
-    <div>
+    <main>
       <div>
-          <h1 className="font-extrabold text-3xl pt-2.5 text-left">Announcements</h1>
-        </div>
-        <div>
-          <Link href="/">
-            <h1 className="font-bold text-right">View all</h1>
-          </Link>
-        </div>
-    
-    <div dir="ltr" className="px-6">
-      <div className="flex overflow-x-auto scroll-ps-6 snap-x snap-mandatory gap-6">
-        {items.map((item, index) => (
-          <CarouselItem
-            key={index}
-            title={item.title}
-            imageSrc={item.imageSrc}
-            dateTime={item.dateTime}
-          />
-        ))}
+        <h1 className="font-extrabold text-3xl pt-2.5 text-left">
+          Announcements
+        </h1>
       </div>
-    </div>
-    </div>
+      <div>
+        <Link href="/">
+          <h1 className="font-bold text-right">View all</h1>
+        </Link>
+      </div>
+
+      <div dir="ltr" className="px-6">
+        <div className="flex overflow-x-auto scroll-ps-6 snap-x snap-mandatory gap-6">
+          {items.map((item, index) => (
+            <CarouselItem
+              key={index}
+              title={item.title}
+              imageSrc={item.imageSrc}
+              dateTime={item.dateTime}
+            />
+          ))}
+        </div>
+      </div>
+    </main>
   );
 }
