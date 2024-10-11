@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // Define the type for the CarouselItem props
 interface CarouselItemProps {
@@ -33,7 +34,7 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
 export default function Carousel() {
   const items = [
     {
-      title: "Gate Close - Renovation",
+      title: "Main Gate Close due to Renovation",
       imageSrc:
         "https://toprealty.com.ph/wp-content/uploads/2022/06/parkridge.jpg",
       dateTime: "2024-10-01 10:30 AM",
@@ -70,6 +71,17 @@ export default function Carousel() {
   ];
 
   return (
+    
+    <div>
+      <div>
+          <h1 className="font-extrabold text-3xl pt-2.5 text-left">Announcements</h1>
+        </div>
+        <div>
+          <Link href="/">
+            <h1 className="font-bold text-right">View all</h1>
+          </Link>
+        </div>
+    
     <div dir="ltr" className="px-6">
       <div className="flex overflow-x-auto scroll-ps-6 snap-x snap-mandatory gap-6">
         {items.map((item, index) => (
@@ -81,6 +93,7 @@ export default function Carousel() {
           />
         ))}
       </div>
+    </div>
     </div>
   );
 }

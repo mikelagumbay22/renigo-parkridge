@@ -1,7 +1,7 @@
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import UserNavigation from "../../components/user-navigation";
-import Carousel from "../../components/Announcement/Dashboard-Carousel";
+import Carousel from "../../components/announcement/Dashboard-Carousel";
 
 export default function Index() {
   return (
@@ -26,14 +26,6 @@ export default function Index() {
               />
             </div>
           </div>
-        </div>
-        <div>
-          <h1 className="font-extrabold text-3xl pt-2.5 text-left">Announcements</h1>
-        </div>
-        <div>
-          <Link href="/forgot-password">
-            <h1 className="font-bold text-right">View all</h1>
-          </Link>
         </div>
         <div>
           <Carousel />
