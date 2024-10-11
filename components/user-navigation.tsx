@@ -10,7 +10,7 @@ import { IconPhoneFilled } from "@tabler/icons-react";
 function UserNavigation() {
   return (
     <footer>
-      <div className="grid px-6 z-0 relative">
+      <div className="grid z-0 relative">
         <Image
           src={navBackground} // Use imported image here
           alt="Navigation Background"
