@@ -51,7 +51,7 @@ export default function Carousel() {
       dateTime: "2024-10-01 12:00 PM",
     },
     {
-      title: "Simbang Gabi Schedule",
+      title: "Simbang Gabi Schedule for December",
       imageSrc:
         "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVtVY_kv8i_APLNsyJfBy9OaDiniygaq1AF3iC15Kollg9sV9K3X574EGMgPR3Edtirwz9N3el04S2y4o-Vfixaswq7A39b4Ob-CPwMJB6sqgLbwUAJOPzVw-XgIkX-0JwD7S7p_SBJm-JcFnQzbLiGC5FQVVdhsBNulV65LcP7Gzzz-WVM-NOmB5XQA/s2048/San%20Pedro%20Calungsod%20Parish%20-%20Sta.%20Cruz,%20Antipolo%20City,%20Rizal.jpg",
       dateTime: "2024-10-02 09:15 AM",
@@ -63,7 +63,7 @@ export default function Carousel() {
       dateTime: "2024-10-02 10:45 AM",
     },
     {
-      title: "ParkRidge Gym Opening",
+      title: "ParkRidge Gym Opening at the clubhouse",
       imageSrc:
         "https://marketplace.canva.com/EAE6jwsJsL8/1/0/1131w/canva-black-minimalist-gym-center-promo-poster-btQabfai1Wo.jpg",
       dateTime: "2024-10-03 01:00 PM",
