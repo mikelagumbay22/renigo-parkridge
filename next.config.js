@@ -22,6 +22,23 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'marketplace.canva.com',
       },
+      // New image domains
+      {
+        protocol: 'https',
+        hostname: 'img.freepik.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 't4.ftcdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'wallpapers.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+      },
     ],
   },
 };
