@@ -37,8 +37,11 @@ export default function Index() {
           <Facilities />
         </div>
       </div>
-      <div className="w-96">
-        <UserNavigation />
+
+      <div className="fixed bottom-0 flex rounded-lg w-full max-w-md py-1.5 justify-between">
+        <div className="">
+          <UserNavigation />
+        </div>
       </div>
     </main>
   );

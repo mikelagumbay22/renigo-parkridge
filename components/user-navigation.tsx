@@ -16,7 +16,7 @@ function UserNavigation() {
           alt="Navigation Background"
           className="rounded-full"
         />
-        <div className="z-10 absolute top-5 w-full">
+        <div className="z-10 absolute top-7 w-full">
           <div className="grid grid-cols-5 place-items-center justify-items-center px-3">
             <IconHomeFilled className="text-white" size={30} />
             <IconBellFilled className="text-white" size={30} />
