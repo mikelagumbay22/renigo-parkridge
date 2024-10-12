@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import { IconArrowLeft } from "@tabler/icons-react";
+import { SubmitButton } from "@/components/submit-button";
+
 
 const Register = () => {
   const [email, setEmail] = useState("");

@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
-// Define the type for the CarouselItem props
 interface CarouselItemProps {
   title: string;
   imageSrc: string;
@@ -27,19 +24,23 @@ export default function Facilities() {
   const items = [
     {
       title: "Basketball Court",
-      imageSrc: "https://img.freepik.com/premium-photo/basketball-sport-arena-empty-indoor-basketball-court-horizontal-panoramic-wallpaper-with-copy-space-generative-ai_262708-8503.jpg",
+      imageSrc:
+        "https://img.freepik.com/premium-photo/basketball-sport-arena-empty-indoor-basketball-court-horizontal-panoramic-wallpaper-with-copy-space-generative-ai_262708-8503.jpg",
     },
     {
       title: "Tennis Court",
-      imageSrc: "https://t4.ftcdn.net/jpg/09/88/83/89/360_F_988838909_jdITohH019DL3L7l2bG2qGDLWPCAXN7Z.jpg",
+      imageSrc:
+        "https://t4.ftcdn.net/jpg/09/88/83/89/360_F_988838909_jdITohH019DL3L7l2bG2qGDLWPCAXN7Z.jpg",
     },
     {
       title: "Swimming Pool",
-      imageSrc: "https://wallpapers.com/images/hd/swimming-pool-swimmer-kc5m6emwpnoej3zc.jpg",
+      imageSrc:
+        "https://wallpapers.com/images/hd/swimming-pool-swimmer-kc5m6emwpnoej3zc.jpg",
     },
     {
       title: "Hall 1",
-      imageSrc: "https://media.istockphoto.com/id/178739543/photo/banquet-hall-restaurant.jpg?s=612x612&w=0&k=20&c=Ze5HUqoWRKpVAnG5JqxZ-O92-16_42jZbujUrU2TK7U=",
+      imageSrc:
+        "https://media.istockphoto.com/id/178739543/photo/banquet-hall-restaurant.jpg?s=612x612&w=0&k=20&c=Ze5HUqoWRKpVAnG5JqxZ-O92-16_42jZbujUrU2TK7U=",
     },
   ];
 

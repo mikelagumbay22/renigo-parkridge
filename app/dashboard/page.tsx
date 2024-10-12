@@ -3,13 +3,17 @@ import Link from "next/link";
 import UserNavigation from "../../components/user-navigation";
 import Carousel from "../../components/announcement/carousel";
 import Facilities from "../../components/facilities/facilities";
+import LogoutButton from "../../components/logout-button";
 
 export default function Index() {
   return (
     <main className="flex flex-col items-center justify-between h-screen">
       <div className="p-8 rounded-lg w-full max-w-md py-1.5">
         <div>
-          <h1 className="text-center mt-14 text-xl">
+          <LogoutButton />
+        </div>
+        <div>
+          <h1 className="text-center mt-5 text-xl">
             Welcome to ParkRidge Estate
           </h1>
         </div>
