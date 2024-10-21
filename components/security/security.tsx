@@ -1,16 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 
 export default function Security() {
+  const [scannedData, setScannedData] = useState("");
+
   useEffect(() => {
-    const onScanSuccess = (decodedText: any, decodedResult: any) => {
-      // Handle the scanned code as you like
+    const onScanSuccess = (decodedText, decodedResult) => {
+      // Update state with the scanned data
+      setScannedData(decodedText);
       console.log(`Code matched: ${decodedText}`, decodedResult);
     };
 
-    const onScanFailure = (error: any) => {
+    const onScanFailure = (error) => {
       // Handle scan failure, usually better to ignore and keep scanning.
       console.warn(`Code scan error: ${error}`);
     };
@@ -33,6 +36,35 @@ export default function Security() {
     };
   }, []);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!scannedData) {
+      alert("No data to upload. Please scan a QR code first.");
+      return;
+    }
+
+    try {
+      // Perform the data upload (e.g., sending to a backend server)
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: scannedData }),
+      });
+
+      if (response.ok) {
+        alert("Data uploaded successfully!");
+        setScannedData(""); // Clear the input after successful upload
+      } else {
+        alert("Failed to upload data.");
+      }
+    } catch (error) {
+      console.error("Error uploading data:", error);
+      alert("An error occurred while uploading data.");
+    }
+  };
+
   return (
     <main>
       <div>
@@ -46,9 +78,22 @@ export default function Security() {
       </div>
       <div dir="ltr" className="px-6 mt-4 w-96 mb-28">
         {/* QR Code Scanner Placeholder */}
-        <div id="reader" className="w-80 pb-9 " ></div>
+        <div id="reader" className="w-80 pb-9"></div>
       </div>
+      <div className="px-6">
+        {/* Input and Submit Form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            type="text"
+            value={scannedData}
+            onChange={(e) => setScannedData(e.target.value)}
+            placeholder="Scanned QR Code Data"
+            className="border p-2 mb-28"
+            readOnly
+          />
 
+        </form>
+      </div>
     </main>
   );
 }
