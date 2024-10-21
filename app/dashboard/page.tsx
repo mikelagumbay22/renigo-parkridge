@@ -4,6 +4,7 @@ import UserNavigation from "../../components/user-navigation";
 import Carousel from "../../components/announcement/carousel";
 import Facilities from "../../components/facilities/facilities";
 import LogoutButton from "../../components/logout-button";
+import Security from "../../components/security/security";
 
 export default function Index() {
   return (
@@ -39,6 +40,9 @@ export default function Index() {
         </div>
         <div>
           <Facilities />
+        </div>
+        <div>
+          <Security />
         </div>
       </div>
 
