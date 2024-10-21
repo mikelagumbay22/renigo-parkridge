@@ -1,19 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 
 export default function Security() {
   const [scannedData, setScannedData] = useState("");
 
   useEffect(() => {
-    const onScanSuccess = (decodedText, decodedResult) => {
+    const onScanSuccess = (decodedText: SetStateAction<string>, decodedResult: any) => {
       // Update state with the scanned data
       setScannedData(decodedText);
       console.log(`Code matched: ${decodedText}`, decodedResult);
     };
 
-    const onScanFailure = (error) => {
+    const onScanFailure = (error: any) => {
       // Handle scan failure, usually better to ignore and keep scanning.
       console.warn(`Code scan error: ${error}`);
     };
@@ -36,7 +36,7 @@ export default function Security() {
     };
   }, []);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     if (!scannedData) {
       alert("No data to upload. Please scan a QR code first.");
