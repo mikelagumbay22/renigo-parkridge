@@ -7,28 +7,26 @@ export default function Security() {
   const [scannedData, setScannedData] = useState("");
 
   useEffect(() => {
-    const onScanSuccess = (decodedText: SetStateAction<string>, decodedResult: any) => {
-      // Update state with the scanned data
+    const onScanSuccess = (
+      decodedText: SetStateAction<string>,
+      decodedResult: any
+    ) => {
       setScannedData(decodedText);
       console.log(`Code matched: ${decodedText}`, decodedResult);
     };
 
     const onScanFailure = (error: any) => {
-      // Handle scan failure, usually better to ignore and keep scanning.
       console.warn(`Code scan error: ${error}`);
     };
 
-    // Create the QR code scanner instance
     const html5QrcodeScanner = new Html5QrcodeScanner(
       "reader",
       { fps: 10, qrbox: { width: 250, height: 250 } },
       false
     );
 
-    // Render the scanner with success and failure callbacks
     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
-    // Cleanup function to stop the scanner when component is unmounted
     return () => {
       html5QrcodeScanner.clear().catch((error) => {
         console.error("Failed to clear QR code scanner:", error);
@@ -36,7 +34,7 @@ export default function Security() {
     };
   }, []);
 
-  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     if (!scannedData) {
       alert("No data to upload. Please scan a QR code first.");
@@ -44,7 +42,6 @@ export default function Security() {
     }
 
     try {
-      // Perform the data upload (e.g., sending to a backend server)
       const response = await fetch("/api/upload", {
         method: "POST",
         headers: {
@@ -55,7 +52,7 @@ export default function Security() {
 
       if (response.ok) {
         alert("Data uploaded successfully!");
-        setScannedData(""); // Clear the input after successful upload
+        setScannedData("");
       } else {
         alert("Failed to upload data.");
       }
@@ -91,7 +88,6 @@ export default function Security() {
             className="border p-2 mb-28"
             readOnly
           />
-
         </form>
       </div>
     </main>
